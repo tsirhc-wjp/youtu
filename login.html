@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/youtube.svg" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Youtube Clone" />
+  <link rel="apple-touch-icon" href="/youtube.svg" />
+  <title>YouTube</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/register.css">
+  <link rel="stylesheet" href="./lib/toastify-js/toastify.css">
+</head>
+
+<body>
+  <div id="root">
+    <div id="panelLogin" class="panel">
+      <h2>登录您的账号</h2>
+      <form id="formLogin">
+        <input type="email" data-describedby="email-err" data-description="email" placeholder="email" data-required
+          data-pattern="\w+@\w+(\.\w+){1,2}" name="email" value="xxx@xxx.xxx" />
+        <span id="email-err"></span>
+        <input type="password" data-describedby="pass-err" data-description="pass" placeholder="password" data-required
+          data-pattern="\w{6,15}" name="password" value="xxxxxx" />
+        <span id="pass-err"></span>
+        <div class="action input-group">
+          <span id="btnRegister" class="pointer">注册</span><button>登录</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="panelRegister" class="panel">
+      <h2>创建您的账号</h2>
+      <form id="formRegister">
+        <div class="input-group">
+          <input name="firstname" data-describedby="firstname-err" data-description="firstname" data-required
+            data-pattern="\w{3,11}" required type="text" placeholder="firstname" value="" />
+          <input name="lastname" data-describedby="lastname-err" data-description="lastname" data-required
+            data-pattern="\w{3,11}" required type="text" required type="text" placeholder="lastname" value="" />
+        </div>
+        <input name="username" required minlength="4" type="text" placeholder="username" value="" />
+        <input name="email" required type="email" placeholder="email" value="" />
+        <div class="input-group">
+          <input name="password" minlength="6" required type="password" placeholder="password" value="" />
+          <input required type="password" placeholder="confirm" value="" />
+        </div>
+        <div class="action input-group">
+          <span id="btnLogin" class="pointer">登录</span><button>注册</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./lib/toastify-js/toastify.js"></script>
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/jquery-validate/jquery-validate.min.js"></script>
+  <script src="./lib/axios/axios.min.js"></script>
+
+  <script src="./scripts/utils.js"></script>
+
+  <script src="./scripts/http.js"></script>
+  <script src="./scripts/login.js"></script>
+</body>
+
+</html>

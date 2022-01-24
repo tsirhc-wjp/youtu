@@ -1,0 +1,48 @@
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1rem;
+  font-family: "Fira Sans", sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(24, 24, 24);
+  line-height: 1.8;
+}
+*,
+::before,
+::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input, textarea {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}

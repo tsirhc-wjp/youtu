@@ -1,0 +1,57 @@
+.panel {
+  width: 385px;
+  padding: 3rem 1.5rem;
+  background: rgb(32, 32, 32);
+  border-radius: 4px;
+  margin: 8% auto;
+}
+
+.panel h2 {
+  margin-bottom: 1.3rem;
+}
+
+.panel .input-group {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.panel .input-group input:last-child {
+  margin-left: 0.7rem;
+}
+
+.panel input {
+  overflow: hidden;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0.6rem 1.2rem;
+  background: rgb(18, 18, 18);
+  border: 1px solid rgb(18, 18, 18);
+  margin-bottom: 1.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.panel .action {
+  margin-top: 1rem;
+}
+
+.panel span {
+  letter-spacing: 0.8px;
+  color: rgb(170, 170, 170);
+}
+
+svg, .pointer {
+  cursor: pointer;
+}
+
+.panel button {
+  padding: 0.4rem 1rem;
+  background: rgb(204, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(204, 0, 0);
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+}
