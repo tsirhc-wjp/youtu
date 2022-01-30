@@ -1,33 +1,37 @@
 .pager {
-  display: inline-block;
+  /* display: inline-block; */
   font: 12 px/21px "宋体";
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin: 30px auto;  
+  display: flex;
+  justify-content: center;
 }
 .pager a,
 .pager .flip,
 .pager .curPage {
-  border: 1px solid #e3e3e3;
+  border: 1px solid #d1cfcf;
   display: inline-block;
-  height: 22px;
-  line-height: 22px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
+  margin: 3px;
 }
 .pager a {
-  background: none repeat scroll 0 0 #fff;
+  background: none repeat scroll 0 0 rgba(253, 253, 253, 0.9);
   color: #010101;
   text-decoration: none;
-  width: 26px;
+  width: 55px;
 }
 .pager a:hover {
   background: none repeat scroll 0 0 #f1f1f1;
 }
 .pager .noPage {
-  color: #a4a4a4;
+  color: #cfcfcf;
 }
 .pager .curPage {
-  background: none repeat scroll 0 0 #49abde;
+  background: none repeat scroll 0 0 #8f8f8f;
   color: #ffffff;
-  width: 26px;
+  width: 55px;
 }
 .pager .flip {
   width: 56px;

@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="/youtube.svg" />
+  <!-- <link rel="icon" href="/youtube.svg" /> -->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Youtube Clone" />
   <link rel="apple-touch-icon" href="/youtube.svg" />
   <title>YouTube</title>
+  <!-- 这个video的样式要放在上面 和下面的css好像有覆盖 放下面会导致预览出不来 -->
   <link rel="stylesheet" href="./lib/video.js/video-js.min.css">
   <link href="./css/style.css" rel="stylesheet" />
   <link href="./css/layout.css" rel="stylesheet" />
@@ -206,7 +207,7 @@
         <div class="videos">
 
         </div>
-        <!-- 分页条 -->
+        <!-- 分页条  下载自GitHub -->
         <div class="pager">
         </div>
       </div>
@@ -216,20 +217,18 @@
     {{ each videos }}
     <a href="./watch.html?id={{ $value.id }}">
       <div class="video">
-        <img class="thumb"
-          src="{{ $value.thumbnail }}"
-          alt="thumbnail" />
+        <img class="thumb" src="{{ $value.thumbnail }}" alt="thumbnail" />
         <div class="video-info-container">
           <div class="channel-avatar">
-            <img
-              src="{{ $value.User.avatar }}"
-              alt="channel avatar" class="sc-AxhCb eSwYtm" style="margin-right: 0.8rem" />
+            <img src="{{ $value.User.avatar }}" alt="channel avatar" class="sc-AxhCb eSwYtm"
+              style="margin-right: 0.8rem" />
           </div>
           <div class="video-info">
             <h4>{{ $value.title }}</h4>
             <span class="secondary">{{ $value.description }}</span>
             <p class="secondary">
               <span>{{ $value.views }} views</span> <span>•</span>
+              <!-- 将前面的获得的值传到 | 后面 进行过滤器改变后再把值返回到前面  -->
               <span>{{ $value.createdAt | relativeTime }}</span>
             </p>
           </div>
@@ -244,6 +243,7 @@
   <script src="./lib/art-template/template-web.js"></script>
   <script src="./lib/axios/axios.js"></script>
   <script src="./lib/dayjs/dayjs.min.js"></script>
+  <script src="./lib/dayjs/locale/zh-cn.js"></script>
   <script src="./lib/dayjs/plugin/relativeTime.js"></script>
   <script src="./lib/video.js/video.min.js"></script>
   <script src="./lib/toastify-js/toastify.js"></script>
