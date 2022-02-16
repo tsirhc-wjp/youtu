@@ -1,14 +1,14 @@
-// 注册dayjs插件
-dayjs.extend(window.dayjs_plugin_relativeTime)
+// // 注册dayjs插件
+// dayjs.extend(window.dayjs_plugin_relativeTime)
 
-// 设置dayjs的过滤器        改个名字  relativeTime  长得一样方便 
-template.defaults.imports.relativeTime = function(value) { 
-  // 方法返回 dayjs里插件的用法
-  return dayjs().to(dayjs(value))
-}
-// 日期汉化
+// // 设置dayjs的过滤器        改个名字  relativeTime  长得一样方便 
+// template.defaults.imports.relativeTime = function(value) { 
+//   // 方法返回 dayjs里插件的用法
+//   return dayjs().to(dayjs(value))
+// }
+// // 日期汉化
 
-dayjs.locale('zh-cn')
+// dayjs.locale('zh-cn')
 
 // 发送请求 获得视频列表
 function lodeData(pagenum , pagesize){

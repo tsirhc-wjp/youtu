@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YouTube</title>
-  <link rel="icon" href="/youtube.svg" />
+  <!-- <link rel="icon" href="/youtube.svg" /> -->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Youtube Clone" />
@@ -186,8 +186,8 @@
         <p><span>{{ video.views }} views</span> <span>•</span> <span>{{ video.createdAt | relativeTime }}</span></p>
         <div class="likes-dislikes flex-row">
           <p class="flex-row like">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" fill="#AAAAAA"
-              width="22" height="22" data-darkreader-inline-fill=""
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" fill="#AAAAAA" width="22"
+              height="22" data-darkreader-inline-fill=""
               style="--darkreader-inline-fill:#e3d4b8; fill: rgb(56, 56, 56);">
               <g>
                 <path
@@ -214,18 +214,18 @@
     <div class="channel-info-description">
       <div class="channel-info-flex">
         <div class="channel-info flex-row">
-          <img class="avatar md"
-            src="{{ video.User.avatar }}"
-            alt="channel avatar">
+          <img class="avatar md" src="{{ video.User.avatar }}" alt="channel avatar">
           <div class="channel-info-meta">
             <h4>
-              <a href="/channel.html?id="{{ video.User.id }}">{{ video.User.username }}</a>
+              <a href="/channel.html?id=" {{ video.User.id }}">{{ video.User.username }}</a>
             </h4>
             <span class="secondary small">{{ video.subscribersCount }} subscribers</span>
           </div>
         </div>
+        <!-- 判断 如果是自己发的视频看不见按钮 -->
         {{ if !video.isVideoMine }}
-        <button class="subscribe {{ video.isSubscribed ? '' : 'active' }}">{{ video.isSubscribed ? 'Subscribed' : 'Subscribe' }}</button>
+        <button
+          class="subscribe {{ video.isSubscribed ? '' : 'active' }}">{{ video.isSubscribed ? 'Subscribed' : 'Subscribe' }}</button>
         {{ /if }}
       </div>
       <p>{{ video.description }}</p>
@@ -239,9 +239,7 @@
     {{ each videos }}
     <a href="/watch.html?id={{ $value.id }}">
       <div class="sc-fzozJi dteCCc">
-        <img class="thumb"
-          src="{{ $value.thumbnail }}"
-          alt="thumbnail">
+        <img class="thumb" src="{{ $value.thumbnail }}" alt="thumbnail">
         <div class="video-info-container">
           <div class="channel-avatar"></div>
           <div class="video-info">
@@ -256,7 +254,7 @@
     </a>
     {{ /each }}
   </script>
-
+  <!-- 评论 -->
   <script id="tplComment" type="text/html">
     <h3>{{ video.comments.length }} comments</h3>
     <div class="add-comment">
@@ -272,9 +270,7 @@
     <div class="list">
       {{ each video.comments }}
       <div class="comment">
-        <a href="/channel.html?id={{ $value.User.id }}"><img
-            src="{{ $value.User.avatar }}"
-            alt="avatar"></a>
+        <a href="/channel.html?id={{ $value.User.id }}"><img src="{{ $value.User.avatar }}" alt="avatar"></a>
         <div class="comment-info">
           <p class="secondary">
             <span><a href="/channel.html?id={{ $value.User.id }}">{{ $value.User.username }}</a></span><span
@@ -292,6 +288,7 @@
   <script src="./lib/toastify-js/toastify.js"></script>
   <script src="./lib/axios/axios.min.js"></script>
   <script src="./lib/dayjs/dayjs.min.js"></script>
+  <script src="./lib/dayjs/locale/zh-cn.js"></script>
   <script src="./lib/dayjs/plugin/relativeTime.js"></script>
   <script src="./lib/art-template/template-web.js"></script>
 
